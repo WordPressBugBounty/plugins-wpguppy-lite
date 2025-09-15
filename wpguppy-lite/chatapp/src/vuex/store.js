@@ -1185,7 +1185,15 @@ export default new Vuex.Store({
     initializePusher(context, payload){
       let pusher = new Pusher(payload.pusherKey, {
         cluster: payload.pusherCluster,
-        authEndpoint: payload.restApiUrl+'channel-authorize',
+        auth: {
+          headers: {
+            'Authorization': 'Bearer ' + window.wpguppy_scripts_vars.authToken
+          },
+          params: {
+            userId  : payload?.userId,
+          }
+        },
+        authEndpoint: payload?.restApiUrl+'channel-authorize',
       });
       
       if(pusher){

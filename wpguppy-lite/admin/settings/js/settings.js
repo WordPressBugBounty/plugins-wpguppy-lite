@@ -11,6 +11,7 @@
         jQuery("#gb-report-user tbody").append(newRowContent);
         wpguppy_remove_reason();
     });
+
 	//change settings tab
     jQuery('.gp-tabs-settings').on('click', function(){
         let _this   = jQuery(this);
@@ -33,8 +34,6 @@
         _this.parents('.at-chatroletabs').find('.gp-role-content').addClass('hide-if-js');
         _this.parents('.at-chatroletabs').find('#'+tab_id).removeClass('hide-if-js');
     });
-	
-	
 
     //WP is guppy admin change status
     jQuery('.wpguppy-is-admin').on('click','button[name=is_guppy_admin]', function(e){
@@ -80,7 +79,7 @@
     function get_wpguppy_whatsapp_user_info(_id){
         let dataString = 'user_id='+_id+'&security='+scripts_constants.ajax_nonce+'&action=get_wpguppy_whatsapp_user_info';
         jQuery.ajax({
-            type: "GET",
+            type: "POST",
             url: scripts_constants.ajaxurl,
             dataType:"json",
             data: dataString,
@@ -104,10 +103,11 @@
     });
 
     //hide whatsapp user popop
-    jQuery('.db-guppy-cus-close-modal').on('click', function(e){
+    jQuery(document).on('click', '.db-guppy-cus-close-modal', function(e){ 
         jQuery('.db-guppy-cus-modal').hide();
         jQuery('body').removeClass('db-guppy-cus-modal-open');
     });
+
     //update whatsapp user info
     jQuery(document).on('click', '.update-guppy-whatsapp-info', function(e){ 
         e.preventDefault();
@@ -117,7 +117,6 @@
         wpguppy_update_whatsapp_info(_id, 1, _form);
     });
 
-   
      jQuery(document).on('click', '#guppy-whatsapp-info-form input[type=checkbox]', function(e){ 
         let _this       = jQuery(this);
         let day =       _this.val();
@@ -173,6 +172,7 @@
             jQuery('.rt-socket').removeClass('hide-if-js');
         }
     });
+
     jQuery('.gp-pusher-settings').on('change',function() {
         let pusher_val  = jQuery(this).val();
         jQuery('.gp-socket-options, .rt-socket').addClass('hide-if-js');
@@ -192,6 +192,7 @@
             jQuery('.gp-socket-options').addClass('hide-if-js');
         }
     });
+
     jQuery('.guppy-search-filter').on('keyup',function() {
         let _this   = jQuery(this);
         let searchVal = _this.val().toUpperCase();
@@ -213,7 +214,6 @@ function guppySearchFilter(searchVal, data) {
       }
     }
 }
-
 
 function wpguppy_UpdateParam(currentUrl,key,val) {
     var url = new URL(currentUrl);

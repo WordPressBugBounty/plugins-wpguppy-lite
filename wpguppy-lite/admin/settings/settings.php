@@ -196,7 +196,7 @@ if (!class_exists('WPGuppy_Lite_Plugin_Options')) {
 		function get_wpguppy_whatsapp_user_info() {
 			
 			$json		= array();
-			$user_id	= !empty($_GET['user_id']) ? $_GET['user_id'] : '';
+			$user_id	= !empty($_POST['user_id']) ? $_POST['user_id'] : '';
 
 			if( !current_user_can('manage_options') || empty($user_id) ){
 				$json['type']		= 'error';

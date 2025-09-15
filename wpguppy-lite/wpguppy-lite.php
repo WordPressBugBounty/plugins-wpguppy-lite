@@ -15,7 +15,7 @@
  * Plugin Name:       WPGuppy Lite
  * Plugin URI:        https://wp-guppy.com/
  * Description:       WPGuppy Lite is a well thought and clinically designed and developed WordPress chat plugin which has been engineered to fulfil the market needs. It is loaded with features without compromising on quality.
- * Version:           1.1.4
+ * Version:           1.1.5
  * Author:            Amento Tech Pvt ltd
  * Author URI:        https://themeforest.net/user/amentotech/
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 
-define( 'WP_GUPPY_LITE_VERSION', '1.1.4' );
+define( 'WP_GUPPY_LITE_VERSION', '1.1.5' );
 define( 'WP_GUPPY_LITE_DIRECTORY', plugin_dir_path( __FILE__ ));
 define( 'WP_GUPPY_LITE_DIRECTORY_URI', plugin_dir_url( __FILE__ ));
 define( 'WP_GUPPY_ACTIVE_THEME_DIRECTORY', get_stylesheet_directory());

@@ -7,7 +7,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 6.0
 Requires PHP: 8.1
 Tested up to: 6.6
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 
 == Description ==
 
